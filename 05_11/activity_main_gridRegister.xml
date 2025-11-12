@@ -47,7 +47,7 @@
         android:inputType="text" />
 
     <TextView
-        android:id="@+id/textPassword"
+        android:id="@+id/textLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="2"
@@ -59,7 +59,7 @@
         android:textSize="16sp"/>
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputLastName"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_row="2"
@@ -67,7 +67,7 @@
         android:layout_columnSpan="2"
         android:layout_gravity="center_horizontal"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/textEmail"
@@ -89,7 +89,7 @@
         android:layout_columnSpan="2"
         android:layout_gravity="center_horizontal"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/textPassword"
@@ -145,5 +145,6 @@
         android:layout_gravity="center_horizontal"
         android:text="Zaloguj"
         android:layout_marginTop="20dp"/>
+
 
 </GridLayout>
