@@ -1,11 +1,10 @@
-package com.example.a26_11;
+package com.example.myapplication;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,10 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
-    Button btn1, btn2;
-    EditText textInput1, textInput2;
-    TextView textView;
+    Button btn;
+    EditText editTextEmail,editTextPassword,editTextPassword2;
+    TextView textDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +28,29 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        textInput1 = findViewById(R.id.editTextText);
-        textInput2 = findViewById(R.id.editTextText2);
-        btn1 = findViewById(R.id.button);
-        btn2 = findViewById(R.id.button2);
-        textView = findViewById(R.id.textView);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextPassword2 = findViewById(R.id.editTextPassword2);
+        btn = findViewById(R.id.button);
+        textDisplay = findViewById(R.id.textView);
 
-        btn2.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, textInput2.getText().toString(), Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                String email = editTextEmail.getText().toString();
+                String pass1 = editTextPassword.getText().toString();
+                String pass2 = editTextPassword2.getText().toString();
+                if(!email.contains("@"))
+                {
+                    textDisplay.setText("Nieprawidłowy adres email");
+                }
+                else if(!pass1.equals(pass2)){
+                    textDisplay.setText("Hasła się różnią");
+                }
+                else{
+                    textDisplay.setText("Witaj " + email);
+                }
             }
         });
-    }
-    public void fillWithText (View v) {
-        textView.setText(textInput1.getText().toString());
     }
 }
