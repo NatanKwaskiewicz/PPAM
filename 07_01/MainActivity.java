@@ -1,5 +1,7 @@
-package com.example.myapplication;
+package com.example.a07_01;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -16,6 +19,17 @@ public class MainActivity extends AppCompatActivity {
     Button btn;
     EditText editTextEmail,editTextPassword,editTextPassword2;
     TextView textDisplay;
+    Intent loggedIn;
+    Bundle logParameters;
+
+    static boolean checkRegex(String regex, String string) {
+        return string.matches(regex);
+    }
+
+    public void errorText(String message) {
+        textDisplay.setTextColor(Color.parseColor("#FF0000"));
+        textDisplay.setText(message);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword2 = findViewById(R.id.editTextPassword2);
         btn = findViewById(R.id.button);
         textDisplay = findViewById(R.id.textView);
+        loggedIn = new Intent(this, MainActivity2.class);
+        logParameters = new Bundle();
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,15 +56,27 @@ public class MainActivity extends AppCompatActivity {
                 String email = editTextEmail.getText().toString();
                 String pass1 = editTextPassword.getText().toString();
                 String pass2 = editTextPassword2.getText().toString();
-                if(!email.contains("@"))
+                if (checkRegex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", email))
                 {
-                    textDisplay.setText("Nieprawidłowy adres email");
+                    logParameters.putString("email", email);
+                    loggedIn.putExtras(logParameters);
+                    if(checkRegex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9!@#$%^&*()_/|]{8,}$", pass1))
+                    {
+                        if(pass1.equals(pass2))
+                        {
+                            startActivity(loggedIn);
+                        }
+                        else
+                        {
+                            errorText("Hasła się różnią");
+                        }
+                    }
+                    else {
+                        errorText("Hasło nie spełnia wymagań");
+                    }
                 }
-                else if(!pass1.equals(pass2)){
-                    textDisplay.setText("Hasła się różnią");
-                }
-                else{
-                    textDisplay.setText("Witaj " + email);
+                else {
+                    errorText("Nieprawidłowy adres email");
                 }
             }
         });
