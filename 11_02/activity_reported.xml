@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ReportedActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:contentDescription="@string/img_desc"
+        app:srcCompat="@drawable/logo"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp">
+
+        <TextView
+            android:id="@+id/no_uniform"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/heading"
+            android:text="@string/header_reported" />
+
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/label"
+            android:text="@string/label_name" />
+
+        <TextView
+            android:id="@+id/reported_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/reported"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/surname_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/label"
+            android:text="@string/label_lastname" />
+
+        <TextView
+            android:id="@+id/reported_surname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/reported"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/class_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/label"
+            android:text="@string/label_class" />
+
+        <TextView
+            android:id="@+id/reported_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/reported"
+            android:text="" />
+
+        <Button
+            android:id="@+id/save_note_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/button"
+            android:text="@string/button_text_back" />
+    </LinearLayout>
+</LinearLayout>
