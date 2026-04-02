@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">18_03</string>
+    <string name="heading">Wizyta u weterynarza</string>
+    <string name="imie_hint">Imię i nazwisko właściciela...</string>
+    <string name="gatunek">Gatunek</string>
+    <string name="pies">Pies</string>
+    <string name="kot">Kot</string>
+    <string name="swinka_morska">Świnka morska</string>
+    <string name="wiek_ques">Ile ma lat?</string>
+    <string name="wiek">0</string>
+    <string name="cel">Cel wizyty</string>
+    <string name="button_ok">OK</string>
+    <string name="time">16:00</string>
+</resources>
