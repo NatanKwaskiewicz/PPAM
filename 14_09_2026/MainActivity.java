@@ -35,12 +35,11 @@ public class MainActivity extends AppCompatActivity {
         textView_numerPrania = findViewById(R.id.textViewNumerPrania);
         textView_odkurzacz = findViewById(R.id.textViewOdkurzacz);
 
-        String btn_wlacz_text = btn_wlacz.getText().toString();
-
         btn_zatwierdz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int number = Integer.getInteger(editText_number.getText().toString());
+                String input = editText_number.getText().toString();
+                int number = Integer.parseInt(input);
 
                 if (number >= 1 && number <= 12){
                     textView_numerPrania.setText("Numer prania: " + number);
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         btn_wlacz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (btn_wlacz_text.equals("Włącz")) {
+                if (btn_wlacz.getText().toString().equals("Włącz")) {
                     btn_wlacz.setText("Wyłącz");
                     textView_odkurzacz.setText("Odkurzacz włączony");
                 } else {
