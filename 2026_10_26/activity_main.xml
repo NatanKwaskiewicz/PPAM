@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#5F9EA0"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Podaj wartość klucza"
+        android:textColor="#FAEBD7"
+        android:textSize="26sp"
+        android:paddingVertical="10dp"/>
+
+    <EditText
+        android:id="@+id/editTextKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:background="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Podaj tekst"
+        android:textColor="#FAEBD7"
+        android:textSize="26sp"
+        android:paddingVertical="10dp" />
+
+    <EditText
+        android:id="@+id/editTextInputText"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:background="#FFFFFF" />
+
+    <Button
+        android:id="@+id/buttonCipher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zaszyfruj"
+        android:textColor="@color/black"
+        android:backgroundTint="#ADD8E6"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginVertical="20dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tekst zaszyfrowany"
+        android:textColor="#FAEBD7"
+        android:textSize="26sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        android:textColor="@color/white"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/buttonSaveToFile"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Zapisz szyfr w pliku"
+        android:backgroundTint="#ADD8E6"
+        android:textColor="@color/black" />
+
+
+</LinearLayout>
