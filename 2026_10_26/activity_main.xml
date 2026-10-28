@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:background="#FFFFFF"/>
 
     <TextView
@@ -88,6 +88,4 @@
         android:text="Zapisz szyfr w pliku"
         android:backgroundTint="#ADD8E6"
         android:textColor="@color/black" />
-
-
 </LinearLayout>
