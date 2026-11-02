@@ -64,7 +64,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String inputText = editTextInputText.getText().toString();
                 String keyText = editTextKey.getText().toString();
-                int key = Integer.parseInt(keyText);
+                int key = 0;
+                if(!keyText.isEmpty())
+                {
+                    key = Integer.parseInt(keyText);
+                }
                 String ciphered = CaesarCipher(inputText, key);
                 textViewResult.setText(ciphered);
             }
@@ -83,6 +87,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-}
-
 }
